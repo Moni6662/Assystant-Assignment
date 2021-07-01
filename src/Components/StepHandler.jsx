@@ -35,20 +35,19 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return ' Step 0';
+      return ' Step 1';
         
     case 1:
-      return 'step 1';
+      return 'step 2';
     case 2:
-      return 'Step 2';
+      return 'Step 3';
       case 3:
-        return 'Step 3';
+        return 'Step 4';
         case 4:
-            return 'Step 4';
-            case 5:
             return 'Step 5';
-        case 6:
-            return 'Finish';
+            case 5:
+            return 'finish';
+        
     default:
       return 'Unknown stepIndex';
   }
