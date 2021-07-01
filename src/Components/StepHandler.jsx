@@ -35,19 +35,19 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return ( <>
-      ' Step 1'
-      
-      </>
-      );
+      return ' Step 0';
         
     case 1:
-      return 'step 2';
+      return 'step 1';
     case 2:
-      return 'Step 3';
+      return 'Step 2';
       case 3:
-        return 'Step 4';
+        return 'Step 3';
         case 4:
+            return 'Step 4';
+            case 5:
+            return 'Step 5';
+        case 6:
             return 'Finish';
     default:
       return 'Unknown stepIndex';
@@ -57,7 +57,7 @@ function getStepContent(step) {
 export default function HorizontalLabelPositionBelowStepper() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-  const steps = getSteps(5);
+  const steps = getSteps(6);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -85,7 +85,7 @@ export default function HorizontalLabelPositionBelowStepper() {
       </Stepper>
 
       <div>
-        {activeStep === steps.length ? (
+        {activeStep === steps.length+1 ? (
           <div className="resetButton">
             <Typography className={classes.instructions}>All steps completed</Typography>
             <Button onClick={handleReset}>Reset</Button>
@@ -101,7 +101,7 @@ export default function HorizontalLabelPositionBelowStepper() {
               >Back</Button>
 
               <Button variant="contained" color="primary" onClick={handleNext}>
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                {activeStep === steps.length +1 ? 'Finish' : 'Next'}
               </Button>
             </div>
           </div>
